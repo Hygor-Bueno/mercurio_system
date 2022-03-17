@@ -1,0 +1,11 @@
+{
+  "name": "mercurio_system",
+  "version": "1.0.0",
+  "description": "sistema para ajudar nas suas compras. Gere sua lista de compras e utilize na hora de realizar as compras; Para aumentar ainda mais sua eficiência, user ela offiline com os recursos de PWA",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Hygor Bueno",
+  "license": "ISC"
+}
