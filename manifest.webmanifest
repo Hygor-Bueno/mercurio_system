@@ -1,7 +1,7 @@
 {
     "lang": "pt-br",
     "name": "Mercurio PWA",
-    "short_name": "MercurioPWA",
+    "short_name": "Mercurio System",
     "description": "Mercurio é uma ferramenta de suporte para suas compras. Faça sua lista, limite seus gatos e não estrapole nos valores.",
     "start_url": "/",
     "background_color": "rgb(77,77,77)",
