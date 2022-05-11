@@ -9,17 +9,17 @@
     "display": "fullscreen",
     "icons": [
         {
-            "src": "mercurioImg225.png",
+            "src": "./Assets/Images/mercurioImg225.png",
             "sizes": "225x225",
             "type":"image/png"
         },
         {
-            "src": "mercurioImg512.png",
+            "src": "./Assets/Images/mercurioImg512.png",
             "sizes": "512x512",
             "type":"image/png"
         },
         {
-            "src": "mercurioImg196.png",
+            "src": "./Assets/Images/mercurioImg196.png",
             "sizes": "196x196",
             "type":"image/png",
             "purpose": "any maskable"
