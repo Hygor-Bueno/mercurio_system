@@ -11,15 +11,27 @@
     <link rel="shortcut icon" href="mercurioImg196.ico">
     <link rel="manifest" href="./manifest.webmanifest" />
     <script defer type="module" src="./pwabuilder-sw-register.js"></script>
+    <script defer type="module" src="./main.js"></script>
 </head>
 <body>
-    <header>
-        <p>Header</p>
+    <header id="addItemHeader">
+        <span>
+            <label>Descrição: </label>
+            <input type="text" />
+        </span>
+        <span>
+            <label>Quantidade: </label>
+            <input type="number" min="0" />
+        </span>
+        <span>
+            Valor:
+            <input type="number" min="0" />
+        </span>
+        <button>+</button>
     </header>
-    <section>
-        <h1>Testando a PWA</h1>
+    <section id="listItensSection">
     </section>
-    <footer>
+    <footer id="calcValueFooter">
         <p>footer</p>        
     </footer>
 </body>

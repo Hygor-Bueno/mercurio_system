@@ -1,4 +1,4 @@
-body,div{
+body,div,section,h1{
     margin:0px;
     padding:0px;
 }
@@ -9,19 +9,32 @@ body{
     height: 100vh;
     width: 100vw;   
 }
-header{
+#addItemHeader{
     min-height:70px;
     background: linear-gradient(45deg, rgba(138,6,16,1) 30%, rgba(55,55,55,1) 30%);
 }
-section{
-    display:flex;
-    justify-content:center;
+#listItensSection{
+    display:flex;    
+    flex-direction:column;
     width: 100%;
     height: 100%;
     background: #f3f3f3;
+    overflow-y: auto;
 }
-footer{
+#listItensSection header{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    border-bottom: 1px solid rgba(55,55,55,1);
+}
+#listItensSection header h1{
+    margin:5px;
+}
+#listItensSection article{
+    width: 100%;
+    height: 100%;
+}
+#calcValueFooter{
     min-height:50px;
-    background: rgba(138,6,16,1);
     background: linear-gradient(45deg, rgba(138,6,16,1) 75%, rgba(55,55,55,1) 75%);
 }
