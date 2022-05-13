@@ -38,3 +38,11 @@ body{
     min-height:50px;
     background: linear-gradient(45deg, rgba(138,6,16,1) 75%, rgba(55,55,55,1) 75%);
 }
+.inputTextItem{
+    width:150px;
+    background:blue;
+}
+.inputNumberItem{
+    width:10px;
+    background: red;
+}
