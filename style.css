@@ -1,4 +1,4 @@
-body,div,section,h1{
+body,div,section,h1,button{
     margin:0px;
     padding:0px;
 }
@@ -9,10 +9,56 @@ body{
     height: 100vh;
     width: 100vw;   
 }
+
+/*Estilo do cabeçalho*/
 #addItemHeader{
-    min-height:70px;
+    padding: 5px;
+    display: flex;
+    justify-content:space-between;
+    align-items: center;
+    min-height:90px;
     background: linear-gradient(45deg, rgba(138,6,16,1) 30%, rgba(55,55,55,1) 30%);
 }
+#addItemHeader div{
+    display: flex;
+    flex-direction: column;
+    width:80%;
+}
+#addItemHeader div span{
+    display: flex;
+    justify-content:space-between;
+    margin:0px 5px 5px 5px;
+    font-size: 20px;
+    color: #fff;
+}
+.inputTextItem{
+    border:none;
+    border-radius:5px;
+    width:150px;
+ 
+    font-size: 20px;
+}
+.inputNumberItem{
+    border:none;
+    border-radius:5px;
+    width:50px;
+    font-size: 20px;
+}
+#addItemHeader button{
+    display:flex;
+    align-items: center;
+    justify-content:center;
+    height:50px;
+    width:50px;
+    font-weight: bold;
+    font-size: 45px;
+    border:outside 1px white;
+    color: #fff;
+    border-radius:25px;
+    margin-right: 5px;
+    background: none;
+}
+
 #listItensSection{
     display:flex;    
     flex-direction:column;
@@ -37,12 +83,4 @@ body{
 #calcValueFooter{
     min-height:50px;
     background: linear-gradient(45deg, rgba(138,6,16,1) 75%, rgba(55,55,55,1) 75%);
-}
-.inputTextItem{
-    width:150px;
-    background:blue;
-}
-.inputNumberItem{
-    width:10px;
-    background: red;
 }

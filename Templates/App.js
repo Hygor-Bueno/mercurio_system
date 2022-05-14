@@ -5,7 +5,7 @@ export class App{
     listItems = new ListItems;
     item = new Items;
     useApp(){        
-        this.listItems.template('#listItensSection');        
         this.item.template('#addItemHeader');
+        this.listItems.template('#listItensSection');        
     }
 }

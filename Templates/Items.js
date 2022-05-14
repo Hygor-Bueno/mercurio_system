@@ -17,7 +17,8 @@ export class Items {
                 </span>
             `
         })
-        elementHtml += '<button type="button">+</button>'
-        document.querySelector(local).insertAdjacentHTML('beforeend', elementHtml)
+        elementHtml = `<div>${elementHtml}</div>`;
+        elementHtml += '<button type="button">+</button>';
+        document.querySelector(local).insertAdjacentHTML('beforeend', elementHtml);
     }
 }
