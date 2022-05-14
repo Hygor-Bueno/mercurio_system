@@ -6,4 +6,7 @@ export class Settinges{
                 {title:"Valor: ",class:"inputNumberItem", type:"number", min:0}
             ]
     }
+    inputMoney(){
+        return [{title:"Valor Máximo: ",class:"inputNumberItem", type:"number", min:0}]
+    }
 }

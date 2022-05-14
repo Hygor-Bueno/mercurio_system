@@ -58,7 +58,6 @@ body{
     margin-right: 5px;
     background: none;
 }
-
 #listItensSection{
     display:flex;    
     flex-direction:column;
