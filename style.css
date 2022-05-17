@@ -83,7 +83,7 @@ body{
     display: flex;
     align-items: center;
     justify-content:space-between;
-    padding:5px;
+    padding:0px 5px;
     min-height:50px;
     background: linear-gradient(45deg, rgba(138,6,16,1) 75%, rgba(55,55,55,1) 75%);
 }
@@ -105,8 +105,10 @@ body{
     display: flex;
     align-items: flex-end;
     max-width:45%;
-    color: #fff;
+    background: #fff;
     font-size: 36px;
+    border-radius: 5px;
+    padding: 0px 5px;
 }
 #vlrTotal i{
     margin-right:5px;
