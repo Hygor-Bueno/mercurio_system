@@ -7,6 +7,6 @@ export class Settings{
             ]
     }
     inputMoney(){
-        return [{title:"Valor Máximo: ",class:"inputNumberItem", type:"number", min:0}]
+        return [{title:"Valor Máx. : ",class:"inputNumberItem", type:"number", min:0}]
     }
 }

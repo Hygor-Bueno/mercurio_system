@@ -10,9 +10,12 @@ export class App{
     value = new ValueMoney;
     settingsJson = new Settings;
     components = new Component;
-    useApp(){        
+    useApp(){ 
         this.item.template('#addItemHeader',this.settingsJson,this.components);
         this.listItems.template('#listItensSection'); 
         this.value.Tempalte('#calcValueFooter',this.settingsJson,this.components)
+    }
+    loadInformation(){
+        !localStorage.getItem('mercurio_list') && localStorage.setItem('mercurio_list',"")
     }
 }

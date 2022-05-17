@@ -1,4 +1,4 @@
-body,div,section,h1,button{
+body,div,section,h1,button,ol{
     margin:0px;
     padding:0px;
 }
@@ -75,10 +75,26 @@ body{
 }
 #listItensSection header h1{
     margin:5px;
+    font-size:30px;
 }
 #listItensSection article{
+    display: flex;
+    justify-content: center;
     width: 100%;
     height: 100%;
+}
+#listItensSection article ol{  
+    padding:5px;
+    width: 95%;
+}
+#listItensSection article ol li{
+    display: flex;
+    list-style: none;
+    font-size: 20px;
+    background: rgba(55,55,55,.2);
+}
+#listItensSection article ol li div{
+    margin:10px;
 }
 #calcValueFooter{
     display: flex;

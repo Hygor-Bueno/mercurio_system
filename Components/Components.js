@@ -5,7 +5,7 @@ export class Component{
     spanInputs(itemJson){
         return `
                     <span>
-                        <label>${itemJson.title}</label>
+                        <label><b>${itemJson.title}</b></label>
                         <input type="${itemJson.type}" 
                             ${itemJson.min ? `min="${itemJson.min}"`:""}
                             ${itemJson.id ? `id="${itemJson.id}"`:""}
