@@ -1,14 +1,15 @@
 export class ListItems{
-    template(local){
+    template(local,settingsJson){
         let item = `
                     <header>
                         <h1>Lista de Itens: </h1>
                     </header>
                     <article>
                         <ol>
-                            <li>
-                                <div>Never</div>
-                            </li>
+                            ${settingsJson.item().map(item=>{
+                                console.log(item)
+                            }
+                            )}
                         </ol>
                     </article>
                 `

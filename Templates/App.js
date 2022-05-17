@@ -12,7 +12,7 @@ export class App{
     components = new Component;
     useApp(){ 
         this.item.template('#addItemHeader',this.settingsJson,this.components);
-        this.listItems.template('#listItensSection'); 
+        this.listItems.template('#listItensSection',this.settingsJson); 
         this.value.Tempalte('#calcValueFooter',this.settingsJson,this.components)
     }
     loadInformation(){
