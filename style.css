@@ -80,6 +80,34 @@ body{
     height: 100%;
 }
 #calcValueFooter{
+    display: flex;
+    align-items: center;
+    justify-content:space-between;
+    padding:5px;
     min-height:50px;
     background: linear-gradient(45deg, rgba(138,6,16,1) 75%, rgba(55,55,55,1) 75%);
+}
+
+#calcValueFooter span{
+    display: flex;
+    align-items: center;
+    margin-right:5px;
+    font-size: 20px;
+    color: #fff;
+    border-radius:5px;
+    height:100%;
+    width: 50%;
+}
+#calcValueFooter span label{
+    margin-right:5px;
+}
+#vlrTotal{
+    display: flex;
+    align-items: flex-end;
+    max-width:45%;
+    color: #fff;
+    font-size: 36px;
+}
+#vlrTotal i{
+    margin-right:5px;
 }

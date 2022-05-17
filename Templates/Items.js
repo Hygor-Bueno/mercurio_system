@@ -1,21 +1,8 @@
-import { Settinges } from "../Settings/Settings.js";
 export class Items {
-    settingsJson = new Settinges;
-    template(local) {
+    template(local,settingsJson,components) {
         let elementHtml = ""
-        this.settingsJson.formItem().map(item => {
-            elementHtml += 
-            `
-                <span>
-                    <label>${item.title}</label>
-                    <input type="${item.type}" 
-                        ${item.min ? `min="${item.min}"`:""}
-                        ${item.id ? `id="${item.id}"`:""}
-                        ${item.class ? `class="${item.class}"`:""}     
-                        ${item.enabled ? `enabled="${item.enabled}"`:""}     
-                        >
-                </span>
-            `
+        settingsJson.formItem().forEach(item => {
+            elementHtml += components.spanInputs(item);
         })
         elementHtml = `<div>${elementHtml}</div>`;
         elementHtml += '<button type="button">+</button>';

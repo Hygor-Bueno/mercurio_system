@@ -1,4 +1,4 @@
-export class Settinges{
+export class Settings{
     formItem(){
         return [
                 {title:"Descrição: ",class:"inputTextItem", type:"text"},
