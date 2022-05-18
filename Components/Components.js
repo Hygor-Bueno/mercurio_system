@@ -12,7 +12,7 @@ export class Component{
                             ${itemJson.id ? `id="${itemJson.id}"`:""}
                             ${itemJson.class ? `class="${itemJson.class}"`:""}     
                             ${itemJson.value ? `value="${itemJson.value}"`:""}     
-                            ${itemJson.enabled ? `enabled="${itemJson.enabled}"`:""}     
+                            ${itemJson.disabled ? `disabled="${itemJson.disabled}"`:""}     
                             >
                     </span>
                 `

@@ -90,11 +90,15 @@ body{
 #listItensSection article ol li{
     display: flex;
     list-style: none;
-    font-size: 20px;
+    justify-content:space-between;
+    margin-top: 5px;
+    width: 100%;
     background: rgba(55,55,55,.2);
 }
-#listItensSection article ol li div{
-    margin:10px;
+#listItensSection article ol li span{
+    display: flex;
+    margin: 10px 5px 10px 0px;
+
 }
 #calcValueFooter{
     display: flex;
@@ -130,4 +134,19 @@ body{
 }
 #vlrTotal i{
     margin-right:5px;
+}
+
+.inputItemList{
+    background: none;
+    border: none;
+    font-size:16px;
+    width: 140px;
+}
+.inputvalueList{
+    text-align: center;
+    width: 60px;
+    font-size:16px;
+    border: none;
+    border-radius: 5px;
+    background: #ffffffcc;
 }
