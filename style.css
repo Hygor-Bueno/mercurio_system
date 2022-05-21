@@ -128,11 +128,14 @@ body{
 #vlrTotal{
     display: flex;
     align-items: flex-end;
+    justify-content:space-between;
     max-width:45%;
     background: #ffffffcc;
     font-size: 36px;
     border-radius: 5px;
     padding: 0px 5px;
+    width: 175px;
+    overflow-x: auto;
 }
 #vlrTotal i{
     margin-right:5px;

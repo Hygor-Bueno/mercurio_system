@@ -24,4 +24,15 @@ export class List{
         return req;
     }
     
+    calcValue(){
+        let total=0;
+        this.#items.forEach(item=>{
+            total += (item.getQuantity() * item.getValue())
+        })
+        this.#totalItems = total.toFixed(2);
+    }
+
+    reloadValueTotal(value){ 
+        document.querySelector('#vlrTotal label').innerText = value;
+    }
 }

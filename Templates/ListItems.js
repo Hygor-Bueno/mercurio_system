@@ -1,6 +1,5 @@
 export class ListItems {
     template(local, listObject, components) {
-        console.log(listObject,components);
         let item = `
                     <header>
                         <h1>Lista de Itens: </h1>
