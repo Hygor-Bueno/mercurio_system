@@ -6,7 +6,11 @@ export class Settings {
             { title: "Valor: ", class: "inputNumberItem", type: "number", min: 0 }
         ]
     }
+    formButton(){
+        return {id:"addItemButton",type:"button",description: "+"}
+    }
     inputMoney() {
-        return [{ title: "Valor Máx. : ",id:'valueMoneyMax', class: "inputNumberItem", type: "number", min: 0 }]
+        let max = JSON.parse(localStorage.mercurio_list).maxValue || "";
+        return [{ title: "Valor Máx. : ",id:'valueMoneyMax', class: "inputNumberItem", type: "number", min: 0, value: max && max}]
     }
 }

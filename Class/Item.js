@@ -4,14 +4,11 @@ export class Item {
     #quantity;
     #value;
 
-    constructor(id,description,quantity,value){ 
-        this.#id = id;
-        this.#description = description;
-        this.#quantity = quantity;
-        this.#value = value;
+    constructor(id, description, quantity, value) {
+        this.populateObject(id, description, quantity, value)
     }
 
-    getId(){ 
+    getId() {
         return this.#id;
     }
     getDescription() {
@@ -24,7 +21,7 @@ export class Item {
         return this.#value
     }
 
-    setId(id){
+    setId(id) {
         this.#id = id;
     }
     setDescription(description) {
@@ -37,6 +34,13 @@ export class Item {
         this.#value = value;
     }
 
+    populateObject(id, description, quantity, value) {
+        this.#id = id;
+        this.#description = description;
+        this.#quantity = quantity;
+        this.#value = value;
+    }
+
     itemsMask() {
         return {
             id: this.#id,
@@ -44,5 +48,18 @@ export class Item {
             quantity: { title: 'Qtd.', value: this.#quantity, type: "number", class: "inputvalueList" },
             value: { title: "R$", value: this.#value, type: "number", class: "inputvalueList" }
         }
+    }
+    loadItems(arrayItems) {
+        let list = [];
+        if (arrayItems['list']) {
+            arrayItems.list.forEach(item => {
+                let object = new Item(item.id, item.description, item.quantity, item.value);
+                list.push(object);
+            });
+        }
+        return list;
+    }
+    addItem(id,element) {
+        document.querySelector("#listItensSection article ol").insertAdjacentHTML('beforeend',`<li id="item_${id}">${element}</li>`)
     }
 }
