@@ -39,26 +39,7 @@ export class App {
     }
     loadInformation() {
         let list = {
-            list: [
-                {
-                    id: 1,
-                    description: "Limão Thaite",
-                    quantity: 5.612,
-                    value: 1.99
-                },
-                {
-                    id: 2,
-                    description: "Maçã Italiana ip. kg ",
-                    quantity: 0.239,
-                    value: 999.99
-                },
-                {
-                    id: 3,
-                    description: "Bisc. Tortinha",
-                    quantity: 7,
-                    value: 2.5
-                }
-            ],
+            list: [],
             maxValue:0
         }
         if (!localStorage.getItem('mercurio_list')) {

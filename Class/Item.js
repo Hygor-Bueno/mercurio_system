@@ -51,7 +51,7 @@ export class Item {
     }
     loadItems(arrayItems) {
         let list = [];
-        if (arrayItems['list']) {
+        if (arrayItems['list']) {    
             arrayItems.list.forEach(item => {
                 let object = new Item(item.id, item.description, item.quantity, item.value);
                 list.push(object);
