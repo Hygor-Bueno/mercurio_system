@@ -16,6 +16,7 @@ export class ListItems {
             localStorage.removeItem('mercurio_list');
             document.querySelector('#vlrTotal label').innerText = '0.00';
             document.querySelector('#valueMoneyMax').value = null;
+            listObject.restartList();
         })
     }
     listItems(listObject, components) {
