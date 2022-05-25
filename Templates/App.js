@@ -23,7 +23,7 @@ export class App {
         let settingsJson = new Settings;
 
         item.template('#addItemHeader', settingsJson, components,this.listObject,this.itemObject);
-        listItems.template('#listItensSection', this.listObject, components);
+        listItems.template('#listItensSection',settingsJson, this.listObject, components);
         value.Tempalte('#calcValueFooter', settingsJson, components)
 
         this.settings();
@@ -46,7 +46,5 @@ export class App {
             localStorage.setItem('mercurio_list', JSON.stringify(list))
         }
         return this.itemObject.loadItems(JSON.parse(localStorage.getItem('mercurio_list')))
-
     }
-
 }

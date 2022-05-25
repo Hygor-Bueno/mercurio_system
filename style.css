@@ -69,13 +69,28 @@ body{
 }
 #listItensSection header{
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
+    align-items: center;
     width: 100%;
     border-bottom: 1px solid rgba(55,55,55,1);
 }
 #listItensSection header h1{
     margin:5px;
     font-size:30px;
+}
+#clearListButtom{
+    background:transparent;
+    background-image: url('./Assets/Images/delete.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;    
+    width: 30px;
+    height:30px;
+    margin-right: 5px;
+    border:none;
+}
+#clearListButtom:hover{
+    cursor: pointer;
 }
 #listItensSection article{
     display: flex;

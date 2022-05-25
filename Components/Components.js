@@ -1,10 +1,9 @@
 export class Component {
     buttons(itemJson) {
         return `
-        <button 
-        ${itemJson.id ? `id=${itemJson.id}` : ""} 
-        ${itemJson.type ? `type=${itemJson.type}` : ""}>
-        ${itemJson.description}</button>
+        <button ${itemJson.id ? `id=${itemJson.id}` : ""} ${itemJson.type ? `type=${itemJson.type}` : ""} ${itemJson.title ? `title=${itemJson.title}` : ""}>
+            ${itemJson.description ? itemJson.description : ""}
+        </button>
         `
     }
     spanInputs(itemJson) {

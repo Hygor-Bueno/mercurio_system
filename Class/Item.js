@@ -62,4 +62,7 @@ export class Item {
     addItem(id,element) {
         document.querySelector("#listItensSection article ol").insertAdjacentHTML('beforeend',`<li id="item_${id}">${element}</li>`)
     }
+    restart(){
+        this.populateObject()
+    }
 }

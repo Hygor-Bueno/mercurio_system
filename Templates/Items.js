@@ -8,12 +8,12 @@ export class Items {
         elementHtml += components.buttons(settingsJson.formButton())
         document.querySelector(local).insertAdjacentHTML('beforeend', elementHtml);
 
-        this.settings(list, item);
+        this.settings(list, item, components);
 
     }
-    settings(list, item) {
+    settings(list, item, components) {
         this.settingForm(list, item);
-        this.settingButton(list, item);
+        this.settingButton(list, item, components);
     }
     cleanForm() {
         document.querySelectorAll(`#addItemHeader div span input`).forEach(item => {
@@ -21,15 +21,18 @@ export class Items {
             item.value = "";
         })
     }
-    settingButton(list, item) {
+    settingButton(list, item, components) {
         document.getElementById('addItemButton').addEventListener('click', () => {
-            let element = ""
-            Object.entries(item.itemsMask()).forEach(itemHtml => {
-                if (itemHtml[0] != 'id') element += components.spanInputs(itemHtml[1])
-            })
-            item.addItem(item.getId(), element)
-            list.addItemList();
-            this.cleanForm()
+            if (document.querySelector('#addItemHeader input[type=text]').value) {
+                let element = ""
+                Object.entries(item.itemsMask()).forEach(itemHtml => {
+                    if (itemHtml[0] != 'id') element += components.spanInputs(itemHtml[1])
+                })
+                item.addItem(item.getId(), element)
+                list.addItemList();
+                this.cleanForm();
+                item.restart();
+            }
         })
     }
     settingForm(list, item) {

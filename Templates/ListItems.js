@@ -1,14 +1,22 @@
 export class ListItems {
-    template(local, listObject, components) {
+    template(local, settingsJson ,listObject, components) {
+        console.log(listObject)
         let item = `
                     <header>
                         <h1>Lista de Itens: </h1>
+                        ${components.buttons(settingsJson.listButton())}
                     </header>
                     <article>
                         ${this.listItems(listObject, components)}
                     </article>
                 `
         document.querySelector(local).insertAdjacentHTML('beforeend', item)
+        document.getElementById('clearListButtom').addEventListener('click',()=>{ 
+            document.querySelector("#listItensSection  article  ol").innerHTML = "";
+            localStorage.removeItem('mercurio_list');
+            document.querySelector('#vlrTotal label').innerText = '0.00';
+            document.querySelector('#valueMoneyMax').value = null;
+        })
     }
     listItems(listObject, components) {
         try {
