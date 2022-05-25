@@ -32,6 +32,7 @@ export class Items {
                 list.addItemList();
                 this.cleanForm();
                 item.restart();
+                list.restartList();
             }
         })
     }

@@ -21,8 +21,9 @@ export class List extends Item {
     setItems(items) { this.#items = items };
     setTotalItems(totalItems) { this.#totalItems = totalItems };
     setValueMax(valueMax) {
+        console.log(valueMax, this.#items)
         this.#valueMax = valueMax;
-        let listJson = JSON.parse(localStorage.mercurio_list)
+        let listJson = JSON.parse(localStorage.getItem('mercurio_list')) || { list: [], maxValue: 0 }
         listJson.maxValue = this.#valueMax;
         this.updateList(listJson);
         this.reloadValueTotal();
@@ -84,17 +85,23 @@ export class List extends Item {
                 }
             );
         })
-        return { list: arrayList }
+        return { list: arrayList, maxValue: this.#valueMax }
     }
-    lastIdItem(){      
+    lastIdItem() {
         let assistent = 0;
-        this.#items.forEach(item=>{
-            if(item.getId() > assistent) assistent = parseInt(item.getId());
+        this.#items.forEach(item => {
+            if (item.getId() > assistent) assistent = parseInt(item.getId());
         })
-        return assistent+1;
+        return assistent + 1;
     }
-    addItemList(){
+    addItemList() {
         this.updateList(this.uploadList());
         this.reloadList();
+    }
+    restartList() {
+        this.#description="";
+        this.#items=[];
+        this.#totalItems=0;
+        this.#valueMax = 0;
     }
 }
