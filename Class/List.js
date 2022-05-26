@@ -21,7 +21,6 @@ export class List extends Item {
     setItems(items) { this.#items = items };
     setTotalItems(totalItems) { this.#totalItems = totalItems };
     setValueMax(valueMax) {
-        console.log(valueMax, this.#items)
         this.#valueMax = valueMax;
         let listJson = JSON.parse(localStorage.getItem('mercurio_list')) || { list: [], maxValue: 0 }
         listJson.maxValue = this.#valueMax;

@@ -17,7 +17,6 @@ export class Items {
     }
     cleanForm() {
         document.querySelectorAll(`#addItemHeader div span input`).forEach(item => {
-            console.log(item);
             item.value = "";
         })
     }
@@ -41,6 +40,7 @@ export class Items {
         document.querySelector(path).onchange = () => {
             let arrayValue = document.querySelectorAll(`${path} span input`);
             item.populateObject(list.lastIdItem(), arrayValue[0].value, arrayValue[1].value, arrayValue[2].value);
+            
         }
     }
 

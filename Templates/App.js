@@ -29,7 +29,15 @@ export class App {
         this.settings();
     }
     settings() {
-        document.getElementById('valueMoneyMax').onchange = () => { this.listObject.setValueMax(document.getElementById('valueMoneyMax').value) };
+        document.getElementById('valueMoneyMax').onchange = () => { 
+            this.listObject.setValueMax(document.getElementById('valueMoneyMax').value);
+            document.getElementById('valueMoneyMax').value ?  
+            document.querySelector("#divVlrTotal label b").innerText = "Valor Restante:"
+            :
+            document.querySelector("#divVlrTotal label b").innerText = "Valor Total:"
+            
+            // divVlrTotal 
+        };
         document.querySelector('#listItensSection article').onchange = () => {
             this.listObject.updateList(this.listObject.uploadList());
             this.listObject.reloadList();

@@ -1,4 +1,4 @@
-body,div,section,h1,button,ol{
+body,div,section,h1,button,ol,input{
     margin:0px;
     padding:0px;
 }
@@ -122,38 +122,44 @@ body{
     align-items: center;
     justify-content:space-between;
     padding:0px 5px;
-    min-height:50px;
+    min-height:80px;
     background: linear-gradient(45deg, rgba(138,6,16,1) 75%, rgba(55,55,55,1) 75%);
 }
 
-#calcValueFooter span{
+#calcValueFooter span,#calcValueFooter #divVlrTotal{
     display: flex;
-    align-items: center;
-    margin-right:5px;
+    flex-direction: column;
+    justify-content: space-between;    
     font-size: 20px;
     color: #fff;
     border-radius:5px;
     height:100%;
     width: 50%;
-    
+}
+#valueMoneyMax{
+    font-size: 36px;
+    min-width:186px;
+    height: 44px;
 }
 #calcValueFooter span label{
     margin-right:5px;
 }
+
 #vlrTotal{
     display: flex;
     align-items: flex-end;
-    justify-content:space-between;
-    max-width:45%;
+    flex-direction: row;
+    justify-content:space-between;    
     background: #ffffffcc;
     font-size: 36px;
     border-radius: 5px;
-    padding: 0px 5px;
-    width: 175px;
     overflow-x: auto;
+    max-width:186px;
+    min-height:44px;
 }
-#vlrTotal i{
+#vlrTotal *{
     margin-right:5px;
+    color: #000;
 }
 
 .inputItemList{
