@@ -121,7 +121,7 @@ body{
     display: flex;
     align-items: center;
     justify-content:space-between;
-    padding:0px 5px;
+    padding: 0px 10px;
     min-height:80px;
     background: linear-gradient(45deg, rgba(138,6,16,1) 75%, rgba(55,55,55,1) 75%);
 }
