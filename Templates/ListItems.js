@@ -10,13 +10,20 @@ export class ListItems {
                     </article>
                 `
         document.querySelector(local).insertAdjacentHTML('beforeend', item)
+        this.settings(listObject);
+    }
+    settings(listObject){
+        document.querySelector('#listItensSection article').onchange = () => {
+            listObject.updateList(listObject.uploadList());
+            listObject.reloadList();
+        };
         document.getElementById('clearListButtom').addEventListener('click',()=>{ 
             document.querySelector("#listItensSection  article  ol").innerHTML = "";
             localStorage.removeItem('mercurio_list');
             document.querySelector('#vlrTotal label').innerText = '0.00';
+            document.querySelector("#divVlrTotal label b").innerText = "Valor Total:"
             document.querySelector('#valueMoneyMax').value = null;
             listObject.restartList();
-            steepTitleValue();
         })
     }
     listItems(listObject, components) {

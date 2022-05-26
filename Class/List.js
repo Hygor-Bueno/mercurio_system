@@ -71,16 +71,12 @@ export class List extends Item {
     uploadList() {
         let arrayList = [];
         document.querySelectorAll('#listItensSection article ol li').forEach(item => {
-            let idItem = item.id.split('_')[1];
-            let description = document.querySelector(`#${item.id} :nth-child(1) input`).value;
-            let quantity = document.querySelector(`#${item.id} :nth-child(2) input`).value;
-            let value = document.querySelector(`#${item.id} :nth-child(3) input`).value;
             arrayList.push(
                 {
-                    id: idItem,
-                    description: description,
-                    quantity: parseFloat(quantity),
-                    value: parseFloat(value)
+                    id: item.id.split('_')[1],
+                    description: document.querySelector(`#${item.id} :nth-child(1) input`).value,
+                    quantity: parseFloat(document.querySelector(`#${item.id} :nth-child(2) input`).value),
+                    value: parseFloat(document.querySelector(`#${item.id} :nth-child(3) input`).value)
                 }
             );
         })

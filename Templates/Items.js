@@ -7,18 +7,11 @@ export class Items {
         elementHtml = `<div>${elementHtml}</div>`;
         elementHtml += components.buttons(settingsJson.formButton())
         document.querySelector(local).insertAdjacentHTML('beforeend', elementHtml);
-
         this.settings(list, item, components);
-
     }
     settings(list, item, components) {
         this.settingForm(list, item);
         this.settingButton(list, item, components);
-    }
-    cleanForm() {
-        document.querySelectorAll(`#addItemHeader div span input`).forEach(item => {
-            item.value = "";
-        })
     }
     settingButton(list, item, components) {
         document.getElementById('addItemButton').addEventListener('click', () => {
@@ -31,7 +24,6 @@ export class Items {
                 list.addItemList();
                 this.cleanForm();
                 item.restart();
-
             }
         })
     }
@@ -40,9 +32,11 @@ export class Items {
         document.querySelector(path).onchange = () => {
             let arrayValue = document.querySelectorAll(`${path} span input`);
             item.populateObject(list.lastIdItem(), arrayValue[0].value, arrayValue[1].value, arrayValue[2].value);
-            
         }
     }
-
-
+    cleanForm() {
+        document.querySelectorAll(`#addItemHeader div span input`).forEach(item => {
+            item.value = "";
+        })
+    }
 }
