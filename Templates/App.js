@@ -29,8 +29,8 @@ export class App {
         value.Tempalte('#calcValueFooter', settingsJson, components)
 
         this.settings();
-        this.updateAPP();
     }
+
     settings() {
         document.getElementById('valueMoneyMax').onchange = () => {
             this.listObject.setValueMax(document.getElementById('valueMoneyMax').value);
@@ -42,25 +42,20 @@ export class App {
         };
         this.listObject.reloadValueTotal();
     }
+
     loadInformation() {
         let list = {
             list: [],
             maxValue: 0
         }
         !localStorage.mercurio_list && localStorage.setItem('mercurio_list', JSON.stringify(list))
-        !localStorage.mercurio_update && localStorage.setItem('mercurio_update', this.utils.toDay());
         return this.itemObject.loadItems(JSON.parse(localStorage.getItem('mercurio_list')))
     }
+
     steepTitleValue() {
         document.getElementById('valueMoneyMax').value ?
             document.querySelector("#divVlrTotal label b").innerText = "Valor Restante:"
             :
             document.querySelector("#divVlrTotal label b").innerText = "Valor Total:"
-    }
-    updateAPP(){
-        if (navigator.onLine && (this.utils.toDay() != localStorage.mercurio_update)) {
-            window.location.reload();
-            localStorage.setItem('mercurio_update', this.utils.toDay())
-        }
     }
 }

@@ -1,6 +1,6 @@
 const CACHE = "pwabuilder-offline";
 const QUEUE_NAME = "bgSyncQueue";
-
+const version = '1.0.0';
 importScripts('https://storage.googleapis.com/workbox-cdn/releases/5.1.2/workbox-sw.js');
 
 self.addEventListener("message", (event) => {
