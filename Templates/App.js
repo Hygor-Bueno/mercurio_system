@@ -31,12 +31,7 @@ export class App {
     settings() {
         document.getElementById('valueMoneyMax').onchange = () => { 
             this.listObject.setValueMax(document.getElementById('valueMoneyMax').value);
-            document.getElementById('valueMoneyMax').value ?  
-            document.querySelector("#divVlrTotal label b").innerText = "Valor Restante:"
-            :
-            document.querySelector("#divVlrTotal label b").innerText = "Valor Total:"
-            
-            // divVlrTotal 
+            this.steepTitleValue();
         };
         document.querySelector('#listItensSection article').onchange = () => {
             this.listObject.updateList(this.listObject.uploadList());
@@ -54,5 +49,11 @@ export class App {
             localStorage.setItem('mercurio_list', JSON.stringify(list))
         }
         return this.itemObject.loadItems(JSON.parse(localStorage.getItem('mercurio_list')))
+    }
+    steepTitleValue(){
+        document.getElementById('valueMoneyMax').value ?  
+        document.querySelector("#divVlrTotal label b").innerText = "Valor Restante:"
+        :
+        document.querySelector("#divVlrTotal label b").innerText = "Valor Total:"
     }
 }
