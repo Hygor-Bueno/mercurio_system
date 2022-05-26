@@ -23,7 +23,7 @@ export class App {
         let settingsJson = new Settings;
 
         item.template('#addItemHeader', settingsJson, components,this.listObject,this.itemObject);
-        listItems.template('#listItensSection',settingsJson, this.listObject, components);
+        listItems.template('#listItensSection',settingsJson, this.listObject, components,this.steepTitleValue);
         value.Tempalte('#calcValueFooter', settingsJson, components)
 
         this.settings();

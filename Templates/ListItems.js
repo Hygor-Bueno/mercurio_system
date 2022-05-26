@@ -1,5 +1,5 @@
 export class ListItems {
-    template(local, settingsJson ,listObject, components) {
+    template(local, settingsJson ,listObject, components,steepTitleValue) {
         let item = `
                     <header>
                         <h1>Lista de Itens: </h1>
@@ -16,6 +16,7 @@ export class ListItems {
             document.querySelector('#vlrTotal label').innerText = '0.00';
             document.querySelector('#valueMoneyMax').value = null;
             listObject.restartList();
+            steepTitleValue();
         })
     }
     listItems(listObject, components) {
