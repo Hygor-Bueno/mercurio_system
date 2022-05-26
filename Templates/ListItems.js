@@ -3,6 +3,8 @@ export class ListItems {
         let item = `
                     <header>
                         <h1>Lista de Itens: </h1>
+                        <h1>Lista de Itens: </h1>
+                        <h1>Lista de Itens: </h1>
                         ${components.buttons(settingsJson.listButton())}
                     </header>
                     <article>
