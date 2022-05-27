@@ -38,7 +38,8 @@ export class App {
         return this.itemObject.loadItems(JSON.parse(localStorage.getItem('mercurio_list')))
     }
     shareNow() {
-        let fileArray = new File([`${localStorage.getItem('mercurio_list')}`], "filename.txt", { type: "text/plain", lastModified: Date.now() });
+        // let fileArray = new Blob([JSON.stringify(JSON.parse(localStorage.getItem('mercurio_list')), null, 2)], {type : 'application/json'});
+        let fileArray = new File([`${localStorage.getItem('mercurio_list')}`], "lita.txt", { type: "text/plain", lastModified: Date.now() });
         if (window.navigator && window.navigator.canShare && window.navigator.canShare({ files: [fileArray] })) {
             navigator.share({
                 files: [fileArray],
@@ -48,5 +49,12 @@ export class App {
                 console.log('Thanks for sharing!');
             }).catch(console.error);
         }
+        this.teste();
+    }
+    teste() {
+        let fileArray = new File([`${localStorage.getItem('mercurio_list')}`], "lita.txt", { type: "application/json"});
+        var link=window.URL.createObjectURL(fileArray)
+        window.location=link;
+        saveAs(fileArray, 'teste.json')
     }
 }
