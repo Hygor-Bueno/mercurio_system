@@ -28,19 +28,57 @@ export class App {
 
         this.listObject.reloadValueTotal();
 
-         let fileList =new File([""], "filename.txt", {type: "text/plain",  lastModified: new Date(0)})
-         console.log(fileList);
-        this.share() && document.getElementById('shareList').addEventListener('click', () => {
-            navigator.share({
-                title: 'Blog Fellyph Cintra',
-                text: 'Como compartilhar conteúdo com web share API',
-                file:[fileList],
-                url: 'http://127.0.0.1:5501/index.html',
-            })
-                .then(() => console.log('Compartilhamento realizado com sucesso'))
-                .catch((error) => console.log('Erro no compartilhamento', error));
-        })
-        this.share();
+
+        
+
+
+
+
+
+
+        const shareNow = async () => {
+            let fileArray = new File([""], "filename.txt", {type: "text/plain", lastModified: Date.now()});
+            if(window.navigator && window.navigator.canShare && window.navigator.canShare({files: fileArray})){
+              navigator.share({
+                files: [fileArray],
+                title: 'Title',
+                text: 'Text to show'
+              }).then(() => {
+                console.log('Thanks for sharing!');
+              })
+              .catch(console.error);
+            }
+          }
+
+          document.getElementById('shareList').addEventListener('click', async() =>{await shareNow()})
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        // this.share() && document.getElementById('shareList').addEventListener('click', () => {
+        //     if (navigator.canShare && navigator.canShare({ files: fileList })) {
+        //         navigator.share({
+        //             title: 'Blog Fellyph Cintra',
+        //             text: 'Como compartilhar conteúdo com web share API',
+        //             files: [fileList],
+        //             url: 'http://127.0.0.1:5501/index.html',
+        //         })
+        //             .then(() => console.log('Compartilhamento realizado com sucesso'))
+        //             .catch((error) => console.log('Erro no compartilhamento', error));
+        //     }
+        // })
+       
     }
     loadInformation() {
         let list = {
