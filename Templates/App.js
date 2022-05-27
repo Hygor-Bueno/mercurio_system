@@ -37,8 +37,8 @@ export class App {
 
 
         const shareNow = async () => {
-            let fileArray = new File([""], "filename.txt", {type: "text/plain", lastModified: Date.now()});
-            if(window.navigator && window.navigator.canShare && window.navigator.canShare({files: fileArray})){
+            let fileArray = new File(["TEste"], "filename.txt", {type: "text/plain", lastModified: Date.now()});
+            if(window.navigator && window.navigator.canShare && window.navigator.canShare({files: [fileArray]})){
               navigator.share({
                 files: [fileArray],
                 title: 'Title',
