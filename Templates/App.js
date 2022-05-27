@@ -27,10 +27,14 @@ export class App {
         value.Tempalte('#calcValueFooter', settingsJson, components, this.listObject)
 
         this.listObject.reloadValueTotal();
+
+         let fileList =new File([""], "filename.txt", {type: "text/plain",  lastModified: new Date(0)})
+         console.log(fileList);
         this.share() && document.getElementById('shareList').addEventListener('click', () => {
             navigator.share({
                 title: 'Blog Fellyph Cintra',
                 text: 'Como compartilhar conteúdo com web share API',
+                file:[fileList],
                 url: 'http://127.0.0.1:5501/index.html',
             })
                 .then(() => console.log('Compartilhamento realizado com sucesso'))
