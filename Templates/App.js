@@ -24,9 +24,19 @@ export class App {
 
         item.template('#addItemHeader', settingsJson, components, this.listObject, this.itemObject);
         listItems.template('#listItensSection', settingsJson, this.listObject, components, this.steepTitleValue);
-        value.Tempalte('#calcValueFooter', settingsJson, components,this.listObject)
+        value.Tempalte('#calcValueFooter', settingsJson, components, this.listObject)
 
         this.listObject.reloadValueTotal();
+        this.share() && document.getElementById('shareList').addEventListener('click', () => {
+            navigator.share({
+                title: 'Blog Fellyph Cintra',
+                text: 'Como compartilhar conteúdo com web share API',
+                url: 'http://127.0.0.1:5501/index.html',
+            })
+                .then(() => console.log('Compartilhamento realizado com sucesso'))
+                .catch((error) => console.log('Erro no compartilhamento', error));
+        })
+        this.share();
     }
     loadInformation() {
         let list = {
@@ -35,5 +45,11 @@ export class App {
         }
         !localStorage.mercurio_list && localStorage.setItem('mercurio_list', JSON.stringify(list))
         return this.itemObject.loadItems(JSON.parse(localStorage.getItem('mercurio_list')))
+    }
+    share() {
+        if (navigator.share) {
+            return true;
+        }
+
     }
 }

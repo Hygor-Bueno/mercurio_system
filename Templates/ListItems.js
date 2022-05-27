@@ -3,6 +3,7 @@ export class ListItems {
         let item = `
                     <header>
                         <h1>Lista de Itens: </h1>
+                        <button id="shareList" type="button" title="Compartilhar">?</button>
                         ${components.buttons(settingsJson.listButton())}
                     </header>
                     <article>
