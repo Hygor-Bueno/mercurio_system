@@ -3,7 +3,9 @@ export class ListItems {
         let item = `
                     <header>
                         <h1>Lista de Itens: </h1>
+                        <input id="uploadListInput" type="file" title="Lista de Itens Upload">
                         <button id="shareList" type="button" title="Compartilhar">?</button>
+
                         ${components.buttons(settingsJson.listButton())}
                     </header>
                     <article>

@@ -27,7 +27,25 @@ export class App {
         value.Tempalte('#calcValueFooter', settingsJson, components, this.listObject)
 
         this.listObject.reloadValueTotal();
-        document.getElementById('shareList').addEventListener('click', () => { this.shareNow() })
+        document.getElementById('shareList').addEventListener('click', () => { this.shareNow() });
+        var fileSelected =document.getElementById('uploadListInput');
+        fileSelected.addEventListener('change',()=>{
+            var fileExtension = /text.*/;
+            var fileTobeRead = fileSelected.files[0];
+            if (fileTobeRead.type.match(fileExtension)) {
+                var fileReader = new FileReader();
+                fileReader.onload =  ()=> {
+                    var fileContents;
+                    fileContents = fileReader.result;
+                    localStorage.setItem('mercurio_list',fileContents)
+                }
+                console.log(fileTobeRead.type)
+                fileReader.readAsText(fileTobeRead);
+            }
+            else {
+                alert("Por favor selecione arquivo texto");
+            }
+        });
     }
     loadInformation() {
         let list = {
