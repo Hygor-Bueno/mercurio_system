@@ -38,22 +38,15 @@ export class App {
         return this.itemObject.loadItems(JSON.parse(localStorage.getItem('mercurio_list')))
     }
     shareNow() {
-       
-        let fileArray = new File([`${this.teste()}`], "lista.text", { type: "text/plain", lastModified: Date.now() });
+        let fileArray = new File([`${localStorage.getItem('mercurio_list')}`], "lista.txt", { type: "text/plain", lastModified: Date.now() });
         if (window.navigator && window.navigator.canShare && window.navigator.canShare({ files: [fileArray] })) {
             navigator.share({
                 files: [fileArray],
-                title: 'Lista de Compras',
+                title: 'Lista de Compras - Oficial',
                 text: 'Mercusrio System, auxiliando nas suas compras...'
             }).then(() => {
                 console.log('Thanks for sharing!');
             }).catch(console.error);
         }
-    
-    }
-    teste() {
-        let fileArray = new Blob([`${localStorage.getItem('mercurio_list')}`], { type: 'application/json' });
-        return fileArray;
-
     }
 }
