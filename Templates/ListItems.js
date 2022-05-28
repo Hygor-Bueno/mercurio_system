@@ -3,8 +3,9 @@ export class ListItems {
         let item = `
                     <header>
                         <h1>Lista de Itens: </h1>
-                        <input id="uploadListInput" type="file" title="Lista de Itens Upload">
-                        <button id="shareList" type="button" title="Compartilhar">?</button>
+                        <input id="uploadListInput" type="file" title="Lista de Itens Upload" style="display:none">
+                        <label id="uploadListLabel" for="uploadListInput"></label>
+                        <button id="shareList" type="button" title="Compartilhar"></button>
 
                         ${components.buttons(settingsJson.listButton())}
                     </header>
@@ -28,6 +29,9 @@ export class ListItems {
             document.querySelector('#valueMoneyMax').value = null;
             listObject.restartList();
         })
+        document.getElementById('shareList').addEventListener('click', () => { this.shareNow() });
+        var fileSelected =document.getElementById('uploadListInput');
+        fileSelected.addEventListener('change',()=>{this.fileReader(fileSelected);});
     }
     listItems(listObject, components) {
         try {
@@ -48,5 +52,34 @@ export class ListItems {
             console.error(error);
             return ""
         }
+    }
+    shareNow() {
+        let fileArray = new File([`${localStorage.getItem('mercurio_list')}`], "lista.txt", { type: "text/plain", lastModified: Date.now() });
+        if (window.navigator && window.navigator.canShare && window.navigator.canShare({ files: [fileArray] })) {
+            navigator.share({
+                files: [fileArray],
+                title: 'Lista de Compras - Oficial',
+                text: 'Mercusrio System, auxiliando nas suas compras...'
+            }).then(() => {
+                console.log('Thanks for sharing!');
+            }).catch(console.error);
+        }
+    }
+    fileReader(fileSelected){
+        var fileExtension = /text.*/;
+            var fileTobeRead = fileSelected.files[0];      
+            if (fileTobeRead.type.match(fileExtension)) {
+                var fileReader = new FileReader();
+                fileReader.onload =  ()=> {
+                    var fileContents;
+                    fileContents = fileReader.result;
+                    localStorage.setItem('mercurio_list',fileContents)
+                    location.reload();
+                }
+                fileReader.readAsText(fileTobeRead);
+            }
+            else {
+                console.error("Por favor selecione arquivo texto");
+            }
     }
 }
