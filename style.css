@@ -89,7 +89,7 @@ body{
     background-size: cover;    
     width: 30px;
     height:30px;
-    margin-right: 5px;
+    margin-right: 15px;
 }
 #shareList{
     background:transparent;
@@ -99,7 +99,7 @@ body{
     background-size: cover;    
     width: 30px;
     height:30px;
-    margin-right: 5px;
+    margin-right: 15px;
     border:none;
 }
 #clearListButtom{
