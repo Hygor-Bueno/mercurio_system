@@ -31,7 +31,7 @@ export class App {
         var fileSelected =document.getElementById('uploadListInput');
         fileSelected.addEventListener('change',()=>{
             var fileExtension = /text.*/;
-            var fileTobeRead = fileSelected.files[0];
+            var fileTobeRead = fileSelected.files[0];      
             if (fileTobeRead.type.match(fileExtension)) {
                 var fileReader = new FileReader();
                 fileReader.onload =  ()=> {
@@ -39,11 +39,10 @@ export class App {
                     fileContents = fileReader.result;
                     localStorage.setItem('mercurio_list',fileContents)
                 }
-                console.log(fileTobeRead.type)
                 fileReader.readAsText(fileTobeRead);
             }
             else {
-                alert("Por favor selecione arquivo texto");
+                console.error("Por favor selecione arquivo texto");
             }
         });
     }
