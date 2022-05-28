@@ -3,11 +3,12 @@ export class ListItems {
         let item = `
                     <header>
                         <h1>Lista de Itens: </h1>
-                        <input id="uploadListInput" type="file" title="Lista de Itens Upload" style="display:none">
-                        <label id="uploadListLabel" for="uploadListInput"></label>
-                        <button id="shareList" type="button" title="Compartilhar"></button>
-
-                        ${components.buttons(settingsJson.listButton())}
+                        <div id="buttonsListItem">
+                            <input id="uploadListInput" type="file" title="Lista de Itens Upload" style="display:none">
+                            <label id="uploadListLabel" for="uploadListInput"></label>
+                            <button id="shareList" type="button" title="Compartilhar"></button>
+                            ${components.buttons(settingsJson.listButton())}
+                        </div>
                     </header>
                     <article>
                         ${this.listItems(listObject, components)}

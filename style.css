@@ -78,8 +78,11 @@ body{
     margin:5px;
     font-size:30px;
 }
-#uploadListLabel{
+#buttonsListItem{
+    display: flex;
+}
 
+#buttonsListItem #uploadListLabel{  
     background-image: url('./Assets/Images/upload.svg');
     background-repeat: no-repeat;
     background-position: center;
@@ -87,7 +90,6 @@ body{
     width: 30px;
     height:30px;
     margin-right: 5px;
-
 }
 #shareList{
     background:transparent;
