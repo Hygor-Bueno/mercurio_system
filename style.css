@@ -121,6 +121,11 @@ body {
     border: none;
 }
 
+
+#clearListButtom:hover,#shareList:hover, #buttonsListItem #uploadListLabel:hover {
+    cursor: pointer;
+}
+
 #clearListButtom {
     background: transparent;
     background-image: url('./Assets/Images/delete.svg');
@@ -133,9 +138,6 @@ body {
     border: none;
 }
 
-#clearListButtom:hover {
-    cursor: pointer;
-}
 
 #listItensSection article {
     display: flex;
